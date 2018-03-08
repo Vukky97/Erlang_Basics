@@ -17,8 +17,14 @@ sum(Acc, [E | V]) ->
 sum(Acc, []) ->
   Acc.
 
+sum(L) when is_list(L) ->
+  sum(0, L);
+sum(_) ->
+  bad_param.
+
 calculate(L) ->
-  sum(0, L).
+  %sum(0, L).
+  sum(L).
 
 print() ->
   A = [1, 2, 3, 4, 5, 6, 7, 8, 9],
